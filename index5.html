@@ -174,9 +174,8 @@
         tasks.forEach((task) => {
           let checkbox = task.querySelector('input[type="checkbox"]');
           if (checkbox.checked) {
-            let taskObj = new Task(task.querySelector("p").innerText);
-            taskObj.isDone = true;
-            taskObj.changeState();
+            task.classList.remove("checked"); // Удаляем класс "checked"
+            task.classList.add("completed"); // Добавляем класс "completed"
           }
         });
       }
